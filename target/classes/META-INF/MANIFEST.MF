@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Built-By: hp
+Build-Jdk: 17.0.2
+Implementation-Title: spring-boot-admin
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.javainuse
+Implementation-Vendor: Pivotal Software, Inc.
+Implementation-URL: http://projects.spring.io/spring-boot/spring-boot-ad
+ min/
+Created-By: Maven Integration for Eclipse
+
