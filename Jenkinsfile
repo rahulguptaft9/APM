@@ -28,7 +28,7 @@ pipeline {
 		steps{
 			script{
 				sh 'docker build -f Dockerfile -t $registry/apm .'
-				sh 'docker build -f Dockerfile1 -t $registry/apm1 .'
+				//sh 'docker build -f Dockerfile1 -t $registry/apm1 .'
 			}
 		}
 	}
@@ -38,7 +38,7 @@ pipeline {
 			script{
 				docker.withRegistry('',registryCredential){
 				sh 'docker push $registry/apm'
-				sh 'docker push $registry/apm1'					
+				//sh 'docker push $registry/apm1'					
 				}
 			}
 		}
