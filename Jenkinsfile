@@ -16,13 +16,13 @@ pipeline {
 		git 'https://github.com/rahulguptaft9/APM'
 		}	
 	}  
-  /*stage("Build") {
+  stage("Build") {
       steps {
         sh "mvn clean"
         sh "mvn install"
         sh "mvn package"
         }
-    }*/
+    }
 	  
     stage('Building image for front end') {
 		steps{
