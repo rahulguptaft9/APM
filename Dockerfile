@@ -1,5 +1,5 @@
 FROM openjdk:8-jdk
-EXPOSE 8080
+EXPOSE 8093
 RUN mkdir -p /opt/app
 WORKDIR /opt/app
 COPY target/spring-boot-admin-0.0.1-SNAPSHOT.jar /opt/app
