@@ -24,7 +24,7 @@ pipeline {
         }
     }
 	  
-     stage('Git') {
+     stage('Check') {
 		steps{
 		sh 'echo "Hello"'
 		}	
