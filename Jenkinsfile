@@ -24,7 +24,13 @@ pipeline {
         }
     }
 	  
-    stage('Building image for front end') {
+     stage('Git') {
+		steps{
+		sh 'echo "Hello"'
+		}	
+	} 	  
+	  
+    /*stage('Building image for front end') {
 		steps{
 			script{
 				sh 'docker build -f Dockerfile -t $registry/apm .'
@@ -42,7 +48,7 @@ pipeline {
 				}
 			}
 		}
-	}	
+	}	*/
 
   
   
