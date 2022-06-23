@@ -17,7 +17,20 @@ pipeline {
 		}	
 	}  
 	  
-  	  
+
+    stage('Save Variable for next run'){
+      steps {
+        script {
+          properties([
+            parameters([
+              string(defaultValue: "${variable}", description: 'Variable description', name: 'YOUR_VARIABLE', trim: true)
+            ])
+          ])
+        }
+      }
+    }	
+	  
+	    	  
 	  stage('Read Variable'){
       steps {
         script {
@@ -33,17 +46,6 @@ pipeline {
       }
 
     }
-    stage('Save Variable for next run'){
-      steps {
-        script {
-          properties([
-            parameters([
-              string(defaultValue: "${variable}", description: 'Variable description', name: 'YOUR_VARIABLE', trim: true)
-            ])
-          ])
-        }
-      }
-    }	  
   stage("Build") {
       steps {
         sh "mvn clean"
