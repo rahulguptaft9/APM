@@ -16,20 +16,8 @@ pipeline {
 		git 'https://github.com/rahulguptaft9/APM'
 		}	
 	}  
-  stage("Build") {
-      steps {
-        sh "mvn clean"
-        sh "mvn install"
-        sh "mvn package"
-        }
-    }
 	  
-     stage('Check') {
-		steps{
-		sh 'echo "Hello"'
-		}	
-	} 	
-	  
+  	  
 	  stage('Read Variable'){
       steps {
         script {
@@ -54,7 +42,21 @@ pipeline {
           ])
         }
       }
+    }	  
+  stage("Build") {
+      steps {
+        sh "mvn clean"
+        sh "mvn install"
+        sh "mvn package"
+        }
     }
+	  
+     stage('Check') {
+		steps{
+		sh 'echo "Hello"'
+		}	
+	} 	
+
 	  
     /*stage('Building image for front end') {
 		steps{
