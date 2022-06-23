@@ -28,7 +28,33 @@ pipeline {
 		steps{
 		sh 'echo "Hello"'
 		}	
-	} 	  
+	} 	
+	  
+	  stage('Read Variable'){
+      steps {
+        script {
+          try {
+            variable = params.YOUR_VARIABLE
+          }
+          catch (Exception e) {
+            echo("Could not read variable from parameters, assuming this is the first run of the pipeline. Exception: ${e}")
+            variable = ""
+          }
+        }
+      }
+
+    }
+    stage('Save Variable for next run'){
+      steps {
+        script {
+          properties([
+            parameters([
+              string(defaultValue: "${variable}", description: 'Variable description', name: 'YOUR_VARIABLE', trim: true)
+            ])
+          ])
+        }
+      }
+    }
 	  
     /*stage('Building image for front end') {
 		steps{
