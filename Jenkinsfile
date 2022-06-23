@@ -23,6 +23,7 @@ pipeline {
         script {
           try {
             variable = params.YOUR_VARIABLE
+		  echo "${variable}"
           }
           catch (Exception e) {
             echo("Could not read variable from parameters, assuming this is the first run of the pipeline. Exception: ${e}")
